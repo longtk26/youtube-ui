@@ -1,4 +1,5 @@
 import Aside from "@/containers/Aside/Aside";
+import Header from "@/containers/Header/Header";
 
 export default function HomeLayout({
   children,
@@ -6,9 +7,12 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main>
+    <>
+    <Header />
+    <main className="flex">
       <Aside />
       {children}
     </main>
+    </>
   );
 }

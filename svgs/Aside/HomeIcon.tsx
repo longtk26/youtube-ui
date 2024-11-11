@@ -6,7 +6,7 @@ const HomeIcon = (props: any) => (
     style={{
       pointerEvents: "none",
     }}
-    {...props}
+    className={`${props.className}`}
   >
     <path
       fill="#fff"

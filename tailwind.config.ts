@@ -14,6 +14,9 @@ const config: Config = {
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
       },
+      colors: {
+        secondary: "#a0a0a0"
+      }
     },
   },
   plugins: [],

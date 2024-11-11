@@ -5,8 +5,7 @@ const PersonIcon = (props: any) => (
       pointerEvents: "none",
     }}
     viewBox="0 0 24 24"
-    className="w-[24px]"
-    {...props}
+    className={`w-[24px] ${props.className}`}
   >
     <path
       fill="#fff"
