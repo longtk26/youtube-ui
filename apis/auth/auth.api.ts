@@ -42,7 +42,7 @@ export const getAccessTokenKeycloak = async (code: string) => {
   return response.data?.access_token;
 };
 
-export const getUserInfo = async (access_token: string) => {
+export const getUserInfo = async (access_token: string): Promise<GetUserInfoResponse> => {
   try {
     const keycloakUrl = `${authConstants.keycloak.keycloakServer}/realms/youtube/protocol/openid-connect/userinfo`
     const headers = {
@@ -58,12 +58,18 @@ export const getUserInfo = async (access_token: string) => {
       throw new Error("Failed to get user info");
     }
   
-  
     console.log(`User info: ${JSON.stringify(response.data)}`)
   
-    return response.data;
+    return {
+      isLogin: true,
+      userInfo: response.data
+    }
     
   } catch (error) {
     console.error(`Failed to get user info: ${error}`)
+    return {
+      isLogin: false,
+      userInfo: null
+    }
   }
 }
